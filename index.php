@@ -1,6 +1,8 @@
 <?php
-require __DIR__.'/includes/db.php';
+namespace Dotenv;
 $page_title='Home';
+
+require __DIR__.'/includes/db.php';
 include __DIR__.'/includes/header.html';
 ?>
 
