@@ -3,8 +3,5 @@
     "require": {
       "vlucas/phpdotenv": "^2.4"
     }
-  },
-  "require": {
-    "vlucas/phpdotenv": "^2.4"
   }
 }
