@@ -16,9 +16,7 @@ if (!isset($_SESSION["login_user"])) {
 
 <div id="wrapper" class="container-fluid">
 
-<div class="row">
-
-        <article class="col-md-4">
+        <article>
 
         <div class="heading">
             <h2>Login</h2>
@@ -38,7 +36,7 @@ if (!isset($_SESSION["login_user"])) {
             </form>
         </div>
     </article>
-    <article class="col-md-4">
+    <article>
 
     <div class="heading">
         <h2>Register</h2>
@@ -62,7 +60,7 @@ if (!isset($_SESSION["login_user"])) {
         </form>
     </div>
 </article>
-<article class="col-md-4">
+<article>
 
 <div class="heading">
     <h2>Password Reset</h2>
@@ -80,7 +78,8 @@ if (!isset($_SESSION["login_user"])) {
 </div>
 </article>
 
-</div>
+
+
     </div>
 </div>
 
@@ -92,7 +91,7 @@ if (!isset($_SESSION["login_user"])) {
     ?>
 
     <div id='header'>
-      <a href='logout.php' class="btn btn-primary btn-sm mod_date" >Log Out</a><br/><br/>
+      <a href='logout.php' class="btn btn-primary btn-sm mod_date" >Log Out</a>
     </div>
 
     <div id="wrapper" class="container-fluid">
