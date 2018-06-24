@@ -5,24 +5,24 @@ include __DIR__.'/includes/header.html';
 
 $sql = 'SELECT  first, last FROM names';
 
-$stmt = sqlsrv_query($conn, $sql);
-if ($stmt === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
-
-$stmt = sqlsrv_query($conn, $sql);
+$params = array();
+$options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
+$stmt = sqlsrv_query( $conn, $sql , $params, $options );
 
 if ($stmt === false) {
     echo "Error in query preparation/execution.\n";
     die(print_r(sqlsrv_errors(), true));
 }
 
-echo "<TABLE><TR><TH>FIRST</TH><TH>LAST</TH></TR>\n";
+$rows = sqlsrv_num_rows( $stmt );
+echo "There are currently $rows records in the database.<br/><br/>";
+
+echo "<table class='table table-hover'><thead><tr><th>FIRST</th><th>LAST</th></tr></thead><tbody>\n";
 
 while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-    echo "<TR><TD>$row[first]</TD><TD>$row[last]</TD></TR>\n";
+    echo "<tr><td>$row[first]</td><td>$row[last]</td></tr>\n";
 }
 
-echo '</TABLE>';
+echo '</tbody></table>';
 sqlsrv_free_stmt($stmt);
 include __DIR__.'/includes/footer.html';

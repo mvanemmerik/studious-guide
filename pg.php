@@ -14,13 +14,13 @@ $rows = pg_num_rows($result);
 echo "There are currently $rows records in the database.<br/><br/>";
 
 echo "<table>\n";
-echo "<th>First</th><th>Last</th><tr>\n";
+echo "<table class='table table-hover'><thead><tr><th>FIRST</th><th>LAST</th></tr></thead><tbody>\n";
 
-while ($row = pg_fetch_row($result)) {
-  echo "<tr><td>$row[1]</td><td>$row[2]</td></tr>";
+  while ($row = pg_fetch_assoc($result)) {
+  echo "<tr><td>$row[first]</td><td>$row[last]</td></tr>\n";
 }
 
-echo "</table>\n";
+echo '</tbody></table>';
 
 // Free resultset
 pg_free_result($result);

@@ -6,23 +6,22 @@ include __DIR__.'/includes/header.html';
 $sql="SELECT first, last FROM names ORDER BY first";
 
 $result=mysqli_query($dbc,$sql);
-$result2=mysqli_query($dbc,$sql);
 
-// Numeric array
-while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-    print $row[0].' '. $row[1].'<br/>';            
-}
-    
-print "<br/><br/>";
+$rows = $result->num_rows;
+echo "There are currently $rows records in the database.<br/><br/>";
+
+echo "<table class='table table-hover'><thead><tr><th>FIRST</th><th>LAST</th></tr></thead><tbody>\n";
+
 
 // Associative array
-while ($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
-    print $row["first"] .' '. $row["last"].'<br/>';  ;             
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    echo "<tr><td>$row[first]</td><td>$row[last]</td></tr>\n";           
 }
+
+echo '</tbody></table>';
     
 // Free result set
 mysqli_free_result($result);
-mysqli_free_result($result2);
 mysqli_close($dbc);
 
 include __DIR__.'/includes/footer.html';
