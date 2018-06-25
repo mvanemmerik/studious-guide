@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Request';
-include('includes/header.html');
+include __DIR__.'/includes/header.php';
 require('includes/db.php');
 echo '<div id="wrapper" class="container-fluid">';
 

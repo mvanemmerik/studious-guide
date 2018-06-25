@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Password Reset';
-include('includes/header.html');
+include __DIR__.'/includes/header.php';
 require('includes/db.php');
 
 //$myid = $_GET['myid'];

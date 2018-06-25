@@ -1,24 +1,16 @@
 <?php
 
 $page_title = 'Home';
-include 'includes/header.html';
+include 'includes/header.php';
 
-session_start();
-//if ($_SESSION["login_user"] != true) {
+
 if (!isset($_SESSION["login_user"])) {
 
 ?>
 
-<div id='header'>
-  <h1 id='main_header'>Monty van Emmerik</h1>
-  <p class="mod_date"><?php echo "Last modified: " . date ("F d, Y", getlastmod()); ?></p>
-</div>
 
-<div id="wrapper" class="container-fluid">
-
-<div class="row">
-
-        <article class="col-md-4">
+<div id="wrapper">
+        <article>
 
         <div class="heading">
             <h2>Login</h2>
@@ -28,17 +20,17 @@ if (!isset($_SESSION["login_user"])) {
                 <div class="form-group">
 
                     <label for="email">Email: </label>
-                    <input type="text" id="email" name ='email' class="form-control" required='required' />
+                    <input type="text" id="email_1" name ='email' class="form-control" required='required' />
 
                     <label for="password">Password: </label>
-                    <input type="password" id="password" name ='password' class="form-control" required='required' />
+                    <input type="password" id="password_1" name ='password' class="form-control" required='required' />
 
                 </div>
                 <INPUT TYPE="submit" value="Login" class="btn btn-success btn-sm"/>
             </form>
         </div>
     </article>
-    <article class="col-md-4">
+    <article>
 
     <div class="heading">
         <h2>Register</h2>
@@ -48,10 +40,10 @@ if (!isset($_SESSION["login_user"])) {
             <div class="form-group">
 
                 <label for="email">Email: </label>
-                <input type="text" id="email" name ='email' class="form-control" required='required' />
+                <input type="text" id="email_2" name ='email' class="form-control" required='required' />
 
                 <label for="password">Password: </label>
-                <input type="password" id="password" name ='password' class="form-control" required='required' />
+                <input type="password" id="password_2" name ='password' class="form-control" required='required' />
 
                 <label for="password_confirm">Password Again: </label>
                 <input type="password" id="password_confirm" name ='password_confirm' class="form-control" required='required' />
@@ -62,7 +54,7 @@ if (!isset($_SESSION["login_user"])) {
         </form>
     </div>
 </article>
-<article class="col-md-4">
+<article>
 
 <div class="heading">
     <h2>Password Reset</h2>
@@ -72,28 +64,22 @@ if (!isset($_SESSION["login_user"])) {
         <div class="form-group">
 
             <label for="email">Email: </label>
-            <input type="text" id="email" name ='email' class="form-control" required='required' />
+            <input type="text" id="email_3" name ='email' class="form-control" required='required' />
 
         </div>
         <INPUT TYPE="submit" value="Reset Password" class="btn btn-success btn-sm"/>
     </form>
 </div>
 </article>
-
-</div>
-    </div>
 </div>
 
 <?php
 } else {
     $me = $_SESSION["login_user"];
-    echo("Welcome: $me!<br/><br/>");
+    echo("$me<br/>");
 
     ?>
 
-    <div id='header'>
-      <a href='logout.php' class="btn btn-primary btn-sm mod_date" >Log Out</a><br/><br/>
-    </div>
 
     <div id="wrapper" class="container-fluid">
     <a class="btn btn-primary btn-lg" href="mysql.php" role="button">MySQL</a>
@@ -104,9 +90,7 @@ if (!isset($_SESSION["login_user"])) {
     <a class="btn btn-info btn-lg" href="pg.php" role="button">PostgreSQL</a>
     <a class="btn btn-light btn-lg" href="mysql.php" role="button">MySQL</a>
     <a class="btn btn-dark btn-lg" href="ms.php" role="button">Microsoft SQL</a>
-
-    </div>
-  </div>
+</div>
 
 <?php
 

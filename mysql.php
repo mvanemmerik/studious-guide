@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/includes/db.php';
 $page_title='MySQL Connection';
-include __DIR__.'/includes/header.html';
+include __DIR__.'/includes/header.php';
 
 $sql = 'SELECT first, last FROM names order by last, first';
 

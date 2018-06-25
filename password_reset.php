@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Password Request';
-include('includes/header.html');
+include __DIR__.'/includes/header.php';
 require('includes/db.php');
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 //$hashed_password = md5($myPassword);

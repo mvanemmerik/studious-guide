@@ -1,7 +1,8 @@
 <?php
 require('includes/ms.php');
 $page_title='Microftsoft SQL Connection';
-include __DIR__.'/includes/header.html';
+include __DIR__.'/includes/header.php';
+
 
 $sql = 'SELECT first, last FROM names order by last, first';
 

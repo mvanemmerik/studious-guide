@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Login';
-include 'includes/header.html';
+include 'includes/header.php';
 
 session_start();
 //if ($_SESSION["login_user"] != true) {
@@ -12,7 +12,7 @@ if (!isset($_SESSION["login_user"])) {
         <article class='col-lg-8'>
 
         <div class="heading">
-            <h2>PTO Login</h2>
+            <h2>Login</h2>
         </div>
         <div class="content">
             <form role="form" method="post" action="login_check.php">

@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Request';
-include __DIR__.'/includes/header.html';
+include __DIR__.'/includes/header.php';
 require __DIR__.'/includes/db.php';
 
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);

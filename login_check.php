@@ -1,7 +1,7 @@
 <?php
 session_start();
 $page_title = 'Request';
-include('includes/header.html');
+include 'includes/header.php';
 require('includes/db.php');
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $myPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);

@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/includes/pg.php';
 $page_title='PostgreSQL Connection';
-include __DIR__.'/includes/header.html';
+include __DIR__.'/includes/header.php';
 
 // generate and execute a query
 

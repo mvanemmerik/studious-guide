@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+  
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,7 +19,8 @@
             <h1 id='main_header'>Monty van Emmerik</h1>
             <!-- <p class="mod_date"><?php echo "Last modified: ".date("F d Y",filemtime("index.php")); ?></p> -->
             <?php
-            if (!isset($_SESSION["login_user"])) {
+            
+            if (isset($_SESSION["login_user"])) {
               echo "<a href='logout.php' class='btn btn-primary btn-sm mod_date' >Log Out</a><br/><br/>";
             }
             ?>
