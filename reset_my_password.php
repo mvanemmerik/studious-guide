@@ -11,13 +11,15 @@ $query = "select email from users WHERE reset_code = '$mycode'";
 $results = @mysqli_query($dbc, $query);
 $rowCount = mysqli_num_rows($results);
 
+
 echo "<h1>Password Reset</h1>\n";
 
 if ($rowCount > 0) {
     while ($row = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
         print<<<_HTML_
 
-        <article>
+        <div id="wrapper" class='col-md-4'>
+    <article>
 
         <div class="heading">
             <h2>Reset Password</h2>
@@ -39,6 +41,8 @@ if ($rowCount > 0) {
             </form>
         </div>
     </article>
+</div>
+
 
 _HTML_;
     }

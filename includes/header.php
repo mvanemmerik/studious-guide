@@ -1,5 +1,9 @@
 <?php 
 session_start();
+$title = 'Monty van Emmerik';
+if (isset($_SESSION["login_user"])) {
+  $title = $_SESSION["login_user"];
+}
 ?>
   
 <!doctype html>
@@ -16,10 +20,9 @@ session_start();
 	<body>
 		<div>
         <div id='header'>
-            <h1 id='main_header'>Monty van Emmerik</h1>
-            <!-- <p class="mod_date"><?php echo "Last modified: ".date("F d Y",filemtime("index.php")); ?></p> -->
-            <?php
             
+            <?php
+            echo "<h1 id='main_header'>$title</h1>";
             if (isset($_SESSION["login_user"])) {
               echo "<a href='logout.php' class='btn btn-primary btn-sm mod_date' >Log Out</a><br/><br/>";
             }

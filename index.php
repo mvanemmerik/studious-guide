@@ -2,10 +2,7 @@
 
 $page_title = 'Home';
 include 'includes/header.php';
-
-
 if (!isset($_SESSION["login_user"])) {
-
 ?>
 
 
@@ -46,8 +43,17 @@ if (!isset($_SESSION["login_user"])) {
                 <input type="password" id="password_2" name ='password' class="form-control" required='required' />
 
                 <label for="password_confirm">Password Again: </label>
-                <input type="password" id="password_confirm" name ='password_confirm' class="form-control" required='required' />
-
+                <input type="password" id="password_confirm" name ='password_confirm' class="form-control" oninput="check(this)" required='required' />
+                <script language='javascript' type='text/javascript'>
+                     function check(input) {
+                        if (input.value != document.getElementById('password_2').value) {
+                            input.setCustomValidity('Passwords do not match.');
+                        } else {
+                             // input is valid -- reset the error message
+                            input.setCustomValidity('');
+                        }
+                    }
+                </script>
 
             </div>
             <INPUT TYPE="submit" value="Register" class="btn btn-success btn-sm"/>
@@ -75,9 +81,7 @@ if (!isset($_SESSION["login_user"])) {
 
 <?php
 } else {
-    $me = $_SESSION["login_user"];
-    echo("$me<br/>");
-
+    
     ?>
 
 
