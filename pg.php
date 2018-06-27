@@ -11,6 +11,12 @@ $result = pg_query($connection, $sql) or die("Error in query: $query." . pg_last
 // get the number of rows in the resultset
 
 $rows = pg_num_rows($result);
+
+$version = pg_version($connection);
+  
+echo 'PostgreSQL version: '.$version['client']."<br/>\n\n";
+
+
 echo "There are currently $rows records in the database.<br/><br/>\n\n";
 
 echo "<table>\n";

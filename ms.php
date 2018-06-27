@@ -16,6 +16,25 @@ if ($stmt === false) {
 }
 
 $rows = sqlsrv_num_rows( $stmt );
+
+$server_info = sqlsrv_server_info( $conn);  
+if( $server_info )  
+{  
+      foreach( $server_info as $key => $value)  
+      {  
+             //echo $key.": ".$value."\n";  
+             if ($key == 'SQLServerVersion') {
+                 $version = $value;
+             }
+      }  
+}  
+else  
+{  
+      echo "Error in retrieving server info.\n";  
+      die( print_r( sqlsrv_errors(), true));  
+}  
+
+echo "MSSQL version: $version<br/>\n\n";
 echo "There are currently $rows records in the database.<br/><br/>\n\n";
 
 echo "<table class='table table-hover'><thead><tr><th>FIRST</th><th>LAST</th></tr></thead><tbody>\n";

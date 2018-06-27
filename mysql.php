@@ -8,7 +8,11 @@ $sql = 'SELECT first, last FROM names order by last, first';
 $result=mysqli_query($dbc,$sql);
 
 $rows = $result->num_rows;
+// echo mysqli_get_server_version($dbc);
+echo 'MySQL version: '.mysqli_get_server_info($dbc)."<br/>\n\n";
 echo "There are currently $rows records in the database.<br/><br/>\n\n";
+
+
 
 echo "<table class='table table-hover'><thead><tr><th>FIRST</th><th>LAST</th></tr></thead><tbody>\n";
 
