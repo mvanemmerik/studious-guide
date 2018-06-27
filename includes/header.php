@@ -16,18 +16,19 @@ if (isset($_SESSION["login_user"])) {
     <title><?php echo $page_title; ?></title>
   </head>
 	<body>
-		<div>
-      <div id='header'>
-        <?php
-        echo "<h1 id='main_header'>$title</h1>";
-        if (isset($_SESSION["login_user"])) {
-          echo "<a href='index.php' class='btn btn-primary btn-sm' >Home</a>";
-          echo "<a href='logout.php' class='btn btn-primary btn-sm' >Log Out</a>";
-        } else {
-          echo "<a href='login.php' class='btn btn-primary btn-sm' >Log In</a>";
-          echo "<a href='register.php' class='btn btn-primary btn-sm' >Register</a>";
-          echo "<a href='reset.php' class='btn btn-primary btn-sm' >Reset Password</a>";
-        }
+    <div id='header'>
+      <?php
+      echo "<h1 id='main_header' class='center'>$title</h1>";
+      echo "<div class='right'>";
+      if (isset($_SESSION["login_user"])) {
+        echo "<a href='index.php' class='btn btn-primary btn-sm' >Home</a>";
+        echo "<a href='logout.php' class='btn btn-primary btn-sm' >Log Out</a>";
+      } else {
+        echo "<a href='login.php' class='btn btn-primary btn-sm' >Log In</a>";
+        echo "<a href='register.php' class='btn btn-primary btn-sm' >Register</a>";
+        echo "<a href='reset.php' class='btn btn-primary btn-sm' >Reset Password</a>";
+      }
         ?>
-      </div>
+        </div> 
+    </div>
     <div class="container-fluid">
