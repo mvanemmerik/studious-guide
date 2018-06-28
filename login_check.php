@@ -1,5 +1,4 @@
 <?php
-session_start();
 $page_title = 'Request';
 include 'includes/header.php';
 require('includes/db.php');
@@ -30,9 +29,6 @@ if ($rowCount > 0) {
   echo '<div id="pto-button-wrap" class="clearfix">';
 
     echo "<p>Login Failed. Please try again.</p>";
-    echo "<a href='login.php' class='btn btn-primary btn-pto'  >Log In</a>";
-    echo "<a href='register.php' class='btn btn-primary btn-pto' >Register</a>";
-    echo "<a href='reset.php' class='btn btn-primary btn-pto' >Reset Password</a>";
     echo '</div>';
 }
 mysqli_close($dbc);

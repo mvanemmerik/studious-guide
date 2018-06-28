@@ -1,7 +1,7 @@
 <?php
 
 $page_title = 'Home';
-include 'includes/header.html';
+include 'includes/header.php';
 
 session_start();
 //if ($_SESSION["login_user"] != true) {

@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Request';
-include('includes/header.html');
+include('includes/header.php');
 require('includes/db.php');
 
 $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$title = 'Monty van Emmerik';
+$title = "Monty's Sandbox";
 if (isset($_SESSION["login_user"])) {
   $title = $_SESSION["login_user"];
 }

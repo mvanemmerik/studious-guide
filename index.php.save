@@ -3,7 +3,7 @@ namespace Dotenv;
 $page_title='Home';
 
 require __DIR__.'/includes/db.php';
-include __DIR__.'/includes/header.html';
+include __DIR__.'/includes/header.php';
 ?>
 
 <a class="btn btn-primary btn-lg" href="mysql.php" role="button">MySQL</a>
