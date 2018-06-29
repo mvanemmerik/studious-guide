@@ -14,6 +14,16 @@ if (isset($_SESSION["login_user"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/global.css">
     <title><?php echo $page_title; ?></title>
+    
+    <script type="text/javascript">
+      function delete_id(id)  {
+        if(confirm('Are you sure you want to delete this request?'))
+          {
+            window.location.href='delete.php?myid='+id;
+          }
+      }
+    </script>
+
   </head>
 	<body>
     <div id='header'>
