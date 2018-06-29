@@ -3,6 +3,11 @@ $page_title = 'Updated Name';
 include('includes/header.php');
 require('includes/db.php');
 
+if ($_SESSION["login_user"] != true) {
+    echo("Access denied!");
+    exit();
+}
+
 $myid = filter_input(INPUT_POST, 'myid', FILTER_VALIDATE_INT);
 $first = filter_input(INPUT_POST, 'first', FILTER_SANITIZE_STRING);
 $last = filter_input(INPUT_POST, 'last', FILTER_SANITIZE_STRING);

@@ -3,6 +3,11 @@ $page_title = 'Update';
 include('includes/header.php');
 require('includes/db.php');
 
+if ($_SESSION["login_user"] != true) {
+    echo("Access denied!");
+    exit();
+}
+
 //$myid = $_GET['myid'];
 $myid = filter_input(INPUT_GET, 'myid', FILTER_VALIDATE_INT);
 
