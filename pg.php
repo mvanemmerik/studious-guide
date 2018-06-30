@@ -39,7 +39,7 @@ if (isset($_SESSION["login_user"])) {
   include __DIR__.'/includes/footer.html';
 
 } else {
-  header('Location: index.php');
+  header('Location: login.php');
 }
 
 
